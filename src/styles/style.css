@@ -1,0 +1,905 @@
+/* Navbar Container */
+.navbar {
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 30px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-links li a {
+  color: #111 !important;  /* override global white */
+}
+
+
+/* LEFT SIDE (Logo + Links) */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Logo Styling */
+.logo {
+width: fit-content;
+}
+
+/* Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #111;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 1rem;
+  padding: 4px 2px;
+  transition: all 0.2s ease;
+  position: relative;
+  letter-spacing: 0.3px;
+}
+
+.nav-links li a:hover {
+  color: #facc15;
+}
+
+/* Elegant underline on hover */
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #facc15;
+  transition: width 0.3s ease;
+  border-radius: 999px;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* CENTER SEARCH BAR */
+.navbar-center .search-bar {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  width: 280px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border 0.2s;
+  color: #111;
+  background-color: #f9f9f9;
+}
+
+.navbar-center .search-bar:focus {
+  border-color: #facc15;
+}
+
+/* RIGHT LOGIN BUTTON */
+.login-btn {
+  background-color: #facc15;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 999px;
+  color: #111;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.login-btn:hover {
+  background-color: #e6b800;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 20px;
+  }
+
+  .navbar-left {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .navbar-center .search-bar {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar-right {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+/*__________*/
+
+
+/* Add to your existing CSS */
+.info-card li {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  font-size: 1rem;
+  padding: 4px 0;
+  break-inside: avoid;
+}
+
+.info-card li img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('../assets/fortnite-banner.png') no-repeat center center;
+  background-size: cover;
+  padding: 100px 20px 60px;
+  position: relative;
+}
+
+.hero-content {
+  text-align: left;
+  max-width: 600px;
+  margin-left: 40px;
+  margin-bottom: 40px;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.yellow-btn {
+  background-color: #facc15;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.yellow-btn:hover {
+  background-color: #e6b800;
+}
+
+.card-section {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 20px;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.info-card {
+  background-color: #1c1c1e;
+  padding: 20px;
+  border-radius: 16px;
+  flex: 1;
+  max-width: 400px;
+}
+
+.info-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: #facc15;
+}
+
+.info-card ul {
+  list-style: none;
+  padding: 0;
+  columns: 2;
+  column-gap: 20px;
+}
+
+.info-card li {
+  margin: 8px 0;
+  font-size: 1rem;
+  padding: 4px 0;
+  break-inside: avoid;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .info-card {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}
+/* ---------------------------- */
+
+.popular-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+/* style.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0f0f11;
+  color: #fff;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar.dark-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1d;
+  padding: 15px 30px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  margin-right: 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: #fff;
+  font-weight: 500;
+}
+
+.navbar-center .search-bar {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  width: 300px;
+}
+
+.login-btn {
+  background-color: #facc15;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('../assets/fortnite-banner.png') no-repeat center center;
+  background-size: cover;
+  padding: 100px 20px 60px;
+  position: relative;
+}
+
+.hero-content {
+  text-align: left;
+  max-width: 600px;
+  margin-left: 40px;
+  margin-bottom: 40px;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.yellow-btn {
+  background-color: #facc15;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.yellow-btn:hover {
+  background-color: #e6b800;
+}
+
+/* Card Section */
+.card-section {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 20px;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.info-card {
+  background-color: #1c1c1e;
+  padding: 20px;
+  border-radius: 16px;
+  flex: 1;
+  max-width: 400px;
+}
+
+.info-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: #facc15;
+}
+
+.info-card ul {
+  list-style: none;
+  padding: 0;
+  columns: 2;
+  column-gap: 20px;
+}
+
+.info-card li {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  font-size: 1rem;
+  padding: 4px 0;
+  break-inside: avoid;
+}
+
+.info-card li img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  object-fit: contain;
+}
+/* Boosting Section Container */
+.boosting-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
+  background-color: #0f0f11;
+  padding: 60px 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Panels for Boosting & Items */
+.left-panel,
+.right-panel {
+  flex: 1;
+  min-width: 300px;
+  max-width: 480px;
+}
+
+/* Headings */
+.left-panel h2,
+.right-panel h2 {
+  color: #facc15;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+
+/* Make it a vertical list */
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 10px;
+}
+
+/* Single list item with icon and text */
+.service-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-bottom: 1px solid #2c2c2c;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.service-item:hover {
+  background-color: #1a1a1d;
+}
+
+.service-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.service-item span {
+  font-size: 1rem;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .boosting-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+  }
+
+  .left-panel h2,
+  .right-panel h2 {
+    text-align: center;
+    padding-left: 0;
+  }
+}
+
+
+.trading-section {
+  background-color: #1a1a1d;
+  padding: 40px;
+  margin: 40px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.trading-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.trading-section p {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+}
+
+.options-section {
+  margin: 40px 0;
+}
+
+.options-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.options-list li {
+  background-color: #2a2a2e;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.order-steps ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  max-width: 800px;
+  margin: 20px auto 0;
+}
+
+.order-steps li {
+  text-align: left;
+  padding: 10px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.order-steps li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #facc15;
+}/* Trading Section - Full Width */
+.trading-section-horizontal {
+
+  width: fit-content;
+  background-color: rgba(220, 245, 255, 1);
+  padding: 60px 60px;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 60px;
+  padding: 0 20px;
+}
+
+.trading-text {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.trading-text h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.trading-text p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #444;
+  font-size: 1.1rem;
+}
+
+.trading-image-container {
+  flex: 1;
+  min-width: 0;
+}
+
+.trading-block-img {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  display: block;
+}
+
+.yellow-btn {
+  margin-top: 20px;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  background-color: #facc15;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Responsive - stack vertically on mobile */
+@media (max-width: 768px) {
+  .trading-section-horizontal {
+    padding: 40px 0;
+  }
+  
+  .container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .trading-text {
+    text-align: center;
+  }
+  
+  .trading-block-img {
+    max-width: 100%;
+  }
+}
+
+/* Guarantee Section Styles */
+.guarantee-section {
+  padding: 60px 0;
+  background-color: #000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  justify-content: center;
+  
+}
+
+.guarantee-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.guarantee-card {
+  flex: 1;
+  min-width: 400px;
+  max-width: 400px;
+  min-height: 220px; /* Increased minimum height */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center; /* Vertical centering */
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+}
+
+.card-icon {
+  height: 150px;
+  width: 150px; /* Fixed width for perfect circle if needed */
+  object-fit: contain;
+}
+
+.text-content {
+  flex: 1;
+}
+
+.text-content h3 {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.text-content p {
+  margin: 0 0 20px 0;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.money-back {
+  background-color: #fce7b6; /* Solid color equivalent */
+}
+
+.live-support {
+  background-color: #d1f08f;
+}
+
+.action-btn {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background-color: #ffc950;
+  color: #000;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.eldorado-footer {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 40px 0 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-top {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-header {
+  margin-bottom: 40px;
+  margin-right: 70px;
+  padding-left: 50px;
+}
+
+.footer-header h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #ffc950;
+}
+
+.footer-header p {
+  font-size: 16px;
+  color: #cccccc;
+}
+
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #ffc950;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li {
+  margin-bottom: 12px;
+}
+
+.footer-column a {
+  color: #cccccc;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 14px;
+}
+
+.footer-column a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p {
+  color: #999;
+  font-size: 12px;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #999;
+  text-decoration: none;
+  font-size: 12px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .footer-columns {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
+
+/* Add to footer.css */
+.social-media {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  color: #cccccc;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #ffc950;
+  transform: translateY(-3px);
+}
+
+/* Update the footer-header to account for social icons */
+.footer-header {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+/* Payment Methods - Added styles that won't interfere */
+.payment-methods-bar {
+  padding: 12px 30px;
+}
+
+.payment-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px; /* Matches your footer-header padding */
+}
+
+.payment-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.payment-icon {
+  color: #ffffff;
+  font-size: 28px;
+  opacity: 0.8;
+}
+
+.payment-icon:hover {
+  opacity: 1;
+}
+
+.more-methods {
+  color: #cccccc;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .payment-container {
+    padding: 0 20px;
+  }
+  
+  .payment-icons {
+    justify-content: center;
+    gap: 15px;
+  }
+}
