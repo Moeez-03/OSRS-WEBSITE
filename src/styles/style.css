@@ -15,7 +15,6 @@
   border-right: 8px solid transparent;
   border-bottom: 8px solid white; /* Now triangle is white */
   opacity: 0;
-  transition: opacity 0.3s ease;
   pointer-events: none;
   z-index: 1000;
 }
@@ -1179,4 +1178,169 @@ a {
   justify-content: center;
   align-items: center;
   padding: 40px 40px;
+}
+
+
+/*login*/
+
+/* Full login page with dark overlay */
+.login-page {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background: url('../assets/hand-drawn-video-game-background_23-2150307800.avif') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.login-page form label{
+width: 100%;
+}
+
+.login-page form input{
+width: 91%;
+padding: 12px;
+margin-top: 5px;
+}
+
+.new-user a{
+  color: #000;
+}
+
+.login-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75); /* dark overlay for night effect */
+  z-index: 0;
+}
+
+
+
+/* Main login box */
+.login-box {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.9); /* more transparent dark look */
+  color: #000000;
+  padding: 40px; 
+  border-radius: 5px;
+  width: 300px;
+  height: 83vh;
+  max-width: 90%;
+}
+
+/* Logo */
+.login-logo {
+  height: 30px;
+  margin-bottom: 0px;
+}
+
+/* Buttons */
+.login-btn {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+}
+.login-btn p{
+  color: #000;
+}
+
+.login-btn.google {
+  background: #4285F4;
+  color: #fff;
+}
+
+.login-btn.apple {
+  background: #0071e3; /* real Apple blue */
+  color: #fff;
+}
+
+.login-btn.facebook {
+  background: #3b5998;
+  color: #fff;
+}
+
+.or-divider {
+  text-align: center;
+  margin: 20px 0;
+  font-weight: bold;
+  color: #000;
+}
+
+.login-submit {
+  background: #ffc107;
+  color: #ffffff;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: #000000;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* ------------------------ */
+/* === LOGIN HOVER STATES === */
+/* ------------------------ */
+
+/* Google hover */
+.login-btn.google:hover {
+  background: #357ae8; /* slightly darker */
+  transform: translateY(-1px);
+}
+
+/* Apple hover */
+.login-btn.apple:hover {
+  background: #005bb5; /* slightly darker blue */
+  transform: translateY(-1px);
+}
+
+/* Facebook hover */
+.login-btn.facebook:hover {
+  background: #2d4373; /* slightly darker */
+  transform: translateY(-1px);
+}
+
+/* Submit hover */
+.login-submit:hover {
+  background: #e0a800; /* darker yellow */
+  color: #000;
+  transform: translateY(-1px);
+}
+
+/* Smooth transition for all buttons */
+.login-btn,
+.login-submit {
+  transition: all 0.2s ease;
+}
+
+/* Close button hover */
+.close-btn:hover {
+  transform: rotate(90deg);
+  color: #ff0000;
+  transition: all 0.2s ease;
 }

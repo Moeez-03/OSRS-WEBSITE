@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/style.css';
 import logo from '../assets/logo.png';
-
+import LoginPage from './LoginPage';
+import { useNavigate } from 'react-router-dom';
 // Game icons
 import osrsIcon from '../assets/0.webp';
 import poeIcon from '../assets/1.webp';
@@ -12,6 +13,7 @@ import lostArkIcon from '../assets/17.webp';
 
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const navigate = useNavigate();
 
   // Sample arrays for each nav item
   const dropdownData = {
@@ -136,9 +138,11 @@ const Navbar = () => {
         />
       </div>
 
-      <div className="navbar-right">
-        <button className="login-btn">Log in</button>
-      </div>
+       <div className="navbar-right">
+          <button className="login-btn" onClick={() => navigate('/login')}>
+            Log in
+          </button>
+        </div>
     </nav>
   );
 };
