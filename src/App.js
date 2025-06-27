@@ -6,7 +6,8 @@ import BoostingServices from './components/BoostingServices';
 import TradingSection from './components/TradingSection';
 import GuaranteeSection from "./components/GuaranteeSection";
 import Footer from './components/footer';
-
+import Testimonials from './components/Testimonials';
+import FeedbackImg from './components/FeedbackImg';
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
       <Navbar />
       <Hero />
       <BoostingServices />
+      <Testimonials />
+      <FeedbackImg />
       <TradingSection />
       <GuaranteeSection />
       <Footer />

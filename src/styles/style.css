@@ -1,142 +1,265 @@
-/* Navbar Container */
-.navbar {
-  top: 0;
+/* Updated Navbar Base Styles with white background */
+.nav-links li {
+  position: relative;
+  width: fit-content;
+}
+.nav-links li::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* Place under the nav item */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white; /* Now triangle is white */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
   z-index: 1000;
+}
+
+.nav-links li:hover::after {
+  opacity: 1;
+}
+
+
+.nav-links li:hover::after {
+  opacity: 1;
+}
+
+
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
-  padding: 15px 30px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ebe9e9; /* Changed from #1a1a1a */
+  padding: 0 40px;
+  height: 60px;
+  position: relative;
+  z-index: 1000;
+  font-family: 'Inter', sans-serif;
+  border-bottom: 1px solid #eee; /* Optional visual separation */
 }
 
-.nav-links li a {
-  color: #111 !important;  /* override global white */
+.nav-links a{
+  color: #000 !important;
+}
+
+.nav-links a:hover {
+  color: #facc15 !important;
+}
+
+/* Search bar in navbar center (not dropdown) */
+.navbar .search-bar {
+  background-color: #f2f2f2;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 250px;
+  outline: none;
 }
 
 
-/* LEFT SIDE (Logo + Links) */
-.navbar-left {
+.navbar-right {
   display: flex;
   align-items: center;
-  gap: 40px;
 }
 
-/* Logo Styling */
-.logo {
-width: fit-content;
-}
-
-/* Nav Links */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 28px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li a {
-  color: #111;
-  font-weight: 600;
-  text-transform: capitalize;
-  font-size: 1rem;
-  padding: 4px 2px;
-  transition: all 0.2s ease;
-  position: relative;
-  letter-spacing: 0.3px;
-}
-
-.nav-links li a:hover {
-  color: #facc15;
-}
-
-/* Elegant underline on hover */
-.nav-links li a::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: #facc15;
-  transition: width 0.3s ease;
-  border-radius: 999px;
-}
-
-.nav-links li a:hover::after {
-  width: 100%;
-}
-
-/* CENTER SEARCH BAR */
-.navbar-center .search-bar {
-  padding: 8px 16px;
-  border-radius: 999px;
-  border: 1px solid #ccc;
-  width: 280px;
-  font-size: 0.9rem;
-  outline: none;
-  transition: border 0.2s;
-  color: #111;
-  background-color: #f9f9f9;
-}
-
-.navbar-center .search-bar:focus {
-  border-color: #facc15;
-}
-
-/* RIGHT LOGIN BUTTON */
 .login-btn {
   background-color: #facc15;
-  padding: 8px 20px;
+  color: white;
   border: none;
-  border-radius: 999px;
-  color: #111;
-  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s ease;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  transition: background-color 0.2s;
 }
 
 .login-btn:hover {
-  background-color: #e6b800;
+  background-color: #e0b406;
+}
+/* Container must be relative */
+/* ✅ Fix: parent container must be relative */
+.navbar-left {
+  position: relative; /* <== PARENT of .currency-dropdown */
 }
 
-/* Responsive Tweaks */
+/* ✅ Fix: align dropdown center */
+.currency-dropdown {
+  
+  position: absolute;
+  top: calc(100% + 8px);
+  margin-left: 150px;
+  transform: translateX(-50%);
+  width: fit-content;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  padding: 5px 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+}
+
+.nav-links li:hover .currency-dropdown {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+
+/* Dropdown Content Layout */
+.dropdown-content {
+  max-width: fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 20px 30px;
+  display: flex;
+  height: 100%;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+/* REMOVE this! */
+.currency-dropdown::before {
+  content: none;
+}
+
+
+.dropdown-grid {
+  display: grid;
+  width: fit-content;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+/* Section Headers */
+.popular-games-section h4,
+.search-games-section h4 {
+  color: #333 !important;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+  width: fit-content;
+}
+
+/* Popular Games Grid */
+.popular-games-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* Game Items */
+.game-item {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  color: #333 !important;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.game-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Search Section Layout */
+.search-games-section {
+  max-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: #fff;
+  width: fit-content;
+}
+
+/* Search Input */
+.search-games-section .search-bar {
+  width: fit-content;
+  padding: 8px 12px;
+  border: none;
+  background-color: #ffffff;
+  color: #333;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s ease-in-out;
+  margin-bottom: 10px;
+}
+
+/* Scrollable List */
+.search-games-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.search-games-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.search-games-list::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 4px;
+}
+
+.search-games-list a {
+  padding: 4px 6px;
+  font-size: 13px;
+  color: #333 !important;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.search-games-list a:hover {
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .dropdown-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .roblox-section {
+    grid-column: span 2;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar {
+    padding: 0 20px;
+  }
+  .dropdown-grid {
+    grid-template-columns: 1fr;
+  }
+  .popular-games-columns {
     flex-direction: column;
-    align-items: stretch;
-    padding: 10px 20px;
+    gap: 12px;
   }
-
-  .navbar-left {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-  }
-
-  .navbar-center .search-bar {
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .navbar-right {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
+  .roblox-section {
+    grid-column: span 1;
   }
 }
-
-
-/*__________*/
 
 
 /* Add to your existing CSS */
@@ -481,6 +604,7 @@ a {
   }
 }
 
+/*tradingsection*/
 
 .trading-section {
   background-color: #1a1a1d;
@@ -543,7 +667,9 @@ a {
   position: absolute;
   left: 0;
   color: #facc15;
-}/* Trading Section - Full Width */
+}
+
+/* Trading Section - Full Width */
 .trading-section-horizontal {
 
   width: fit-content;
@@ -714,6 +840,8 @@ a {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
+/*footer*/
 
 .eldorado-footer {
   background-color: #1a1a1a;
@@ -902,4 +1030,153 @@ a {
     justify-content: center;
     gap: 15px;
   }
+}
+
+/*Testimonials.jsx*/
+
+  .testimonials-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 80px;
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: #0e0e11;
+  color: white;
+}
+
+.testimonials-title {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  padding: 10px 40px;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.highlight {
+  color: #ff6b00;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  gap: 20px;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.testimonial-card {
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.streamer-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.streamer-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.streamer-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.streamer-name {
+  font-weight: 700;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+.streamer-followers {
+  color: #a0a0a0;
+  font-size: 14px;
+}
+
+.testimonial-text {
+  color: #e0e0e0;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.watch-link {
+  color: #4d90fe;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-block;
+  transition: color 0.2s;
+}
+
+.watch-link:hover {
+  color: #6aa6ff;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .testimonials-container {
+    padding: 40px 50px;
+  }
+  .testimonials-grid {
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-container {
+    padding: 40px 30px;
+  }
+  
+  .testimonials-title {
+    font-size: 28px;
+    padding: 10px 20px;
+  }
+  
+  .testimonial-card {
+    padding: 18px;
+  }
+  
+  .streamer-avatar {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-container {
+    padding: 30px 20px;
+  }
+  
+  .testimonials-title {
+    font-size: 24px;
+    padding: 10px 0;
+  }
+  
+  .streamer-header {
+    gap: 12px;
+  }
+}
+
+.cam{
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 40px;
 }
