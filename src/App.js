@@ -12,6 +12,7 @@ import Footer from './components/footer';
 import Testimonials from './components/Testimonials';
 import FeedbackImg from './components/FeedbackImg';
 import LoginPage from './components/LoginPage';
+import OSRSPage from './components/gamePages/OSRSPage';
 
 function AppContent() {
   const location = useLocation();
@@ -33,6 +34,7 @@ function AppContent() {
           </>
         } />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/osrs" element={<OSRSPage />} />
       </Routes>
     </>
   );

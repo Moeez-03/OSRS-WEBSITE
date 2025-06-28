@@ -1,0 +1,147 @@
+/* OSRSPage.css */
+.osrs-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.osrs-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: calc(100vh - 160px); /* Adjust based on your header/footer height */
+}
+
+.coming-soon-container {
+  text-align: center;
+  max-width: 600px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.osrs-logo {
+  margin-bottom: 20px;
+}
+
+.osrs-game-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.osrs-game-icon:hover {
+  transform: scale(1.05);
+}
+
+.coming-soon-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 8px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.coming-soon-subtitle {
+  font-size: 1.2rem;
+  color: #b0b0b0;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.coming-soon-message {
+  margin-bottom: 30px;
+}
+
+.coming-soon-message h2 {
+  font-size: 2rem;
+  color: #ffd700;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.coming-soon-message p {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.notify-section {
+  margin-top: 30px;
+}
+
+.notify-btn {
+  background: linear-gradient(45deg, #ffd700, #ffed4e);
+  color: #1a1a2e;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.notify-btn:hover {
+  background: linear-gradient(45deg, #ffed4e, #ffd700);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+.notify-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .osrs-content {
+    padding: 40px 15px;
+    min-height: calc(100vh - 140px);
+  }
+  
+  .coming-soon-container {
+    padding: 30px 20px;
+  }
+  
+  .coming-soon-title {
+    font-size: 2rem;
+  }
+  
+  .coming-soon-message h2 {
+    font-size: 1.5rem;
+  }
+  
+  .coming-soon-message p {
+    font-size: 1rem;
+  }
+  
+  .osrs-game-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .coming-soon-title {
+    font-size: 1.8rem;
+  }
+  
+  .coming-soon-subtitle {
+    font-size: 1rem;
+  }
+  
+  .notify-btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+}

@@ -20,7 +20,7 @@ import wowGoldIcon from '../assets/243.webp';
 
 const Hero = () => {
   return (
-    <section className="hero-section" style={{ backgroundImage: `url(${fortniteBanner})` }}>
+    <section className="hero-section" style={{ backgroundImage: `url(${fortniteBanner})`, height: "15rem" }}>
       <div className="hero-content">
         <h1>Jump Into OG Fortnite Map With Fresh Skins</h1>
         <button className="yellow-btn">Buy Fortnite Accounts</button>

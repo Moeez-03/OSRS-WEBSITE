@@ -20,7 +20,7 @@ const Testimonials = () => {
               <span className="streamer-followers">216K followers</span>
             </div>
           </div>
-          <p className="testimonial-text">"Eldorado makes buying super simple — from cheap starter accounts to fully stacked beasts, they've got it all. It's my go-to every time"</p>
+          <p className="testimonial-text">"GameWalay makes buying super simple — from cheap starter accounts to fully stacked beasts, they've got it all. It's my go-to every time"</p>
           <a href="#" className="watch-link">Watch on TikTok</a>
         </div>
         

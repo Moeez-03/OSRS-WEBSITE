@@ -1,25 +1,34 @@
 import React from "react";
 import "../styles/style.css";
-import { 
-  FaReddit, FaTiktok, FaTwitter, FaFacebook, FaYoutube,
-  FaCcVisa, FaCcMastercard, FaPaypal
+import { useNavigate } from 'react-router-dom';
+import {
+  FaReddit,
+  FaTiktok,
+  FaTwitter,
+  FaFacebook,
+  FaYoutube,
 } from "react-icons/fa";
-import { SiAmericanexpress, SiApplepay, SiGooglepay } from "react-icons/si";
+import jazzcashImg from "../assets/jazzcash.png";
+import easypaisaImg from "../assets/easypaisa.jpeg";
+import paypakImg from "../assets/paypak.jpeg";
+import upaisaImg from "../assets/upaisa.jpeg";
+import bankImg from "../assets/bank.jpeg";
+import logoImg from "../assets/logo-icon.png"
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <footer className="eldorado-footer">
-      {/* Payment Methods - Added at top without affecting existing design */}
+      {/* Payment Methods - Now with images instead of icons */}
       <div className="payment-methods-bar">
         <div className="payment-container">
           <div className="payment-icons">
-            <FaCcVisa className="payment-icon" />
-            <FaCcMastercard className="payment-icon" />
-            <SiAmericanexpress className="payment-icon" />
-            <FaPaypal className="payment-icon" />
-            <SiApplepay className="payment-icon" />
-            <SiGooglepay className="payment-icon" />
-            <span className="more-methods">+15 more</span>
+            <img src={jazzcashImg} alt="JazzCash" className="payment-icon" />
+            <img src={easypaisaImg} alt="Easypaisa" className="payment-icon" />
+            <img src={paypakImg} alt="PayPak" className="payment-icon" />
+            <img src={upaisaImg} alt="UPaisa" className="payment-icon" />
+            <img src={bankImg} alt="Bank Transfer" className="payment-icon" />
           </div>
         </div>
       </div>
@@ -27,7 +36,15 @@ const Footer = () => {
       {/* Your existing footer structure - completely unchanged */}
       <div className="footer-top">
         <div className="footer-header">
-          <h1>Game Walay</h1>
+          <div className="footer-logo">
+            <a href="#" onClick={(e) => {
+              e.preventDefault();
+              navigate('/');
+            }}>
+              <img src={logoImg} alt="logo-icon" className="logo-icon" />
+              <h1>Game Walay</h1>
+            </a>
+          </div>
           <p>Join us today to level up your gaming experience!</p>
           <div className="social-media">
             <a href="#" aria-label="Reddit"><FaReddit className="social-icon" /></a>
@@ -74,7 +91,7 @@ const Footer = () => {
       </div>
       
       <div className="footer-bottom">
-        <p>© 2025 Eldorado Market. The eldorado.ge website is owned and operated by Eldorado Market, UAB.</p>
+        <p>© 2025 GameWalay Market. The Gamewalay.ge website is owned and operated by Gamewalay Market, UAB.</p>
         <div className="footer-links">
           <a href="#">Terms of Service</a>
           <a href="#">Privacy Policy</a>

@@ -8,7 +8,7 @@ const TradingSection = () => {
       <div className="container">
         <div className="trading-text">
           <h1>Safe and Easy Trading</h1>
-          <p>Trade without fear - Eldorado guarantees that all trades are legit and keeps you safe from scammers.</p>
+          <p>Trade without fear - GameWalay guarantees that all trades are legit and keeps you safe from scammers.</p>
           <p>It's quick and easy - find the best product for your favorite game, make a payment, receive your order, and get back to playing.</p>
           <button className="yellow-btn">Join us today to level up your gaming experience!</button>
         </div>
