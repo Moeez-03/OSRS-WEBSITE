@@ -1,23 +1,22 @@
 import React from 'react';
 import Footer from '../footer';
 import '../../styles/OSRSPage.css'; 
-import OSRSImg from '../../assets/OSRS.webp'
-import Navbar from '../navbar1';
+import grandImg from '../../assets/0.webp'
 
-const OSRSPage = () => {
+const grandTheft = () => {
   return (
     <div className="osrs-page">
-      <Navbar />
+      
       <div className="osrs-content">
         <div className="coming-soon-container">
           <div className="osrs-logo">
             <img 
-              src={OSRSImg} 
+              src={grandImg} 
               alt="Old School RuneScape" 
               className="osrs-game-icon"
             />
           </div>
-          <h1 className="coming-soon-title">Old School RuneScape</h1>
+          <h1 className="coming-soon-title">Grand Theft Auto 5</h1>
           <p className="coming-soon-subtitle">Gold & Services</p>
           <div className="coming-soon-message">
             <h2>Coming Soon!</h2>
@@ -34,4 +33,4 @@ const OSRSPage = () => {
   );
 };
 
-export default OSRSPage;
+export default grandTheft;

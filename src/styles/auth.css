@@ -1,0 +1,551 @@
+/* Authentication Styles */
+.auth-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2a1c57 0%, #3d2a6b 25%, #4a3575 50%, #5d4285 75%, #6b4c91 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2a1c57 0%, #3d2a6b 25%, #4a3575 50%, #5d4285 75%, #6b4c91 100%);
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #f6ad55;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-message {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.background-illustration {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  z-index: 1;
+}
+
+.left-character {
+  left: 50px;
+  bottom: 50px;
+}
+
+.right-character {
+  right: 50px;
+  bottom: 50px;
+}
+
+.character-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.character-body {
+  width: 80px;
+  height: 120px;
+  border-radius: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.character-body.yellow {
+  background: linear-gradient(135deg, #f7d794, #f39c12);
+}
+
+.character-hat {
+  width: 60px;
+  height: 30px;
+  border-radius: 30px 30px 0 0;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.character-hat.green {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+}
+
+.character-hair {
+  width: 50px;
+  height: 80px;
+  border-radius: 25px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.character-hair.blue {
+  background: linear-gradient(135deg, #3498db, #5dade2);
+}
+
+.character-weapon {
+  width: 40px;
+  height: 8px;
+  background: #7f8c8d;
+  position: absolute;
+  top: 60px;
+  right: -20px;
+  border-radius: 4px;
+}
+
+.character-leaves {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  border-radius: 50% 0;
+  position: absolute;
+  top: 40px;
+  right: -10px;
+}
+
+.background-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.1;
+}
+
+.circle-1 {
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  top: 10%;
+  left: 10%;
+}
+
+.circle-2 {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  top: 70%;
+  right: 15%;
+}
+
+.leaf-1 {
+  width: 80px;
+  height: 80px;
+  background: rgba(46, 204, 113, 0.1);
+  border-radius: 50% 0;
+  top: 20%;
+  right: 25%;
+  transform: rotate(45deg);
+}
+
+.leaf-2 {
+  width: 60px;
+  height: 60px;
+  background: rgba(52, 152, 219, 0.1);
+  border-radius: 50% 0;
+  bottom: 30%;
+  left: 20%;
+  transform: rotate(-30deg);
+}
+
+.auth-page {
+  background: rgba(45, 55, 72, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 32px;
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.logo h1 {
+  color: #ffc950;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.logo-icon {
+  font-size: 32px;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(246, 173, 85, 0.1);
+  border: 2px solid rgba(246, 173, 85, 0.3);
+  box-shadow: 0 4px 12px rgba(237, 137, 54, 0.3);
+}
+
+.auth-content h1 {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  color: #a0aec0;
+  font-size: 14px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.form-section {
+  margin-bottom: 16px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #4a5568;
+  border-radius: 10px;
+  background: rgba(55, 65, 81, 0.8);
+  color: white;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #f6ad55;
+  box-shadow: 0 0 0 3px rgba(246, 173, 85, 0.1);
+  background: rgba(55, 65, 81, 0.95);
+}
+
+.form-group input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-group input::placeholder {
+  color: #9ca3af;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #ed8936, #f6ad55);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 16px;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(237, 137, 54, 0.3);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.auth-switch {
+  text-align: center;
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.auth-switch a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+/* Main Page Styles */
+.main-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2a1c57 0%, #3d2a6b 25%, #4a3575 50%, #5d4285 75%, #6b4c91 100%);
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(45, 55, 72, 0.3);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logout-btn {
+  padding: 8px 16px;
+  background: rgba(237, 137, 54, 0.8);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(237, 137, 54, 1);
+  transform: translateY(-1px);
+}
+
+.main-content {
+  padding: 60px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.hero-section h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #f6ad55, #ed8936);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-section p {
+  font-size: 20px;
+  color: #a0aec0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  background: rgba(45, 55, 72, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #f6ad55;
+}
+
+.feature-card p {
+  color: #a0aec0;
+  line-height: 1.6;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .main-content {
+    padding: 40px 20px;
+  }
+
+  .hero-section h2 {
+    font-size: 36px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-page {
+    max-width: 320px;
+    padding: 24px;
+    margin: 10px;
+  }
+
+  .left-character, .right-character {
+    display: none;
+  }
+
+  .background-shapes .shape {
+    opacity: 0.05;
+  }
+  
+  .logo h1 {
+    font-size: 24px;
+  }
+  
+  .auth-content h1 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .auth-page {
+    max-width: 400px;
+    padding: 36px;
+  }
+}
+
+/* Form row for side-by-side inputs */
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+/* Help text for form fields */
+.form-help {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.85em;
+  color: #666;
+  line-height: 1.3;
+}
+
+/* Verification message styling */
+.verification-message {
+  text-align: center;
+  padding: 30px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.verification-message h2 {
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.verification-message p {
+  margin-bottom: 15px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Error message improvements */
+.error-message {
+  background: #fee;
+  border: 1px solid #fcc;
+  color: #c33;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+/* Input validation states */
+.form-group input:invalid {
+  border-color: #dc3545;
+}
+
+.form-group input:valid {
+  border-color: #28a745;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .form-row .form-group {
+    margin-bottom: 20px;
+  }
+}

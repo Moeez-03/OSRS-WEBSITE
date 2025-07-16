@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/style.css';
 import fortniteBanner from '../assets/fortnite-banner.png';
 
@@ -19,11 +20,19 @@ import fcCoinsIcon from '../assets/142.webp';
 import wowGoldIcon from '../assets/243.webp';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleFortniteClick = () => {
+    navigate('/login');
+  };
+
   return (
     <section className="hero-section" style={{ backgroundImage: `url(${fortniteBanner})`, height: "15rem" }}>
       <div className="hero-content">
         <h1>Jump Into OG Fortnite Map With Fresh Skins</h1>
-        <button className="yellow-btn">Buy Fortnite Accounts</button>
+        <button className="yellow-btn" onClick={handleFortniteClick}>
+          Buy Fortnite Accounts
+        </button>
       </div>
 
       <div className="card-section">
