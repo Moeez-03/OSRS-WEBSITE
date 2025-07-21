@@ -100,7 +100,7 @@
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
   border: 1px solid #444;
   border-radius: 16px;
-  box-shadow: 
+  box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.5),
     0 0 30px rgba(250, 204, 21, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -117,6 +117,7 @@
     opacity: 0;
     transform: translateY(-10px) scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -165,10 +166,10 @@
   top: 0;
   width: 0;
   height: 100%;
-  background: linear-gradient(90deg, 
-    rgba(250, 204, 21, 0.1) 0%, 
-    rgba(250, 204, 21, 0.2) 50%, 
-    rgba(250, 204, 21, 0.1) 100%);
+  background: linear-gradient(90deg,
+      rgba(250, 204, 21, 0.1) 0%,
+      rgba(250, 204, 21, 0.2) 50%,
+      rgba(250, 204, 21, 0.1) 100%);
   transition: width 0.4s ease;
   z-index: -1;
 }
@@ -251,14 +252,14 @@
   outline: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  box-shadow: 
+  box-shadow:
     0 4px 12px rgba(0, 0, 0, 0.1),
     inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .main-search-input:focus {
   border-color: #facc15;
-  box-shadow: 
+  box-shadow:
     0 0 0 4px rgba(250, 204, 21, 0.2),
     0 8px 24px rgba(0, 0, 0, 0.15),
     inset 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -281,7 +282,7 @@
 */
 
 /* Typing Animation */
-.main-search-input:focus + .search-typing-indicator {
+.main-search-input:focus+.search-typing-indicator {
   opacity: 1;
 }
 
@@ -304,8 +305,16 @@
 }
 
 @keyframes searchBlink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Highlight matching text */
@@ -561,6 +570,8 @@
   font-weight: bold;
   margin-bottom: 20px;
   line-height: 1.2;
+  margin-top: 0rem;
+  width: 16rem;
 }
 
 .yellow-btn {
@@ -585,6 +596,7 @@
   gap: 20px;
   max-width: 1200px;
   padding: 0 20px;
+  margin-top: 3rem;
 }
 
 .info-card {
@@ -746,6 +758,7 @@ a {
   margin: 0 auto;
   gap: 20px;
   max-width: 1200px;
+  margin-top: 7rem;
   padding: 0 20px;
 }
 
@@ -797,7 +810,7 @@ a {
   max-width: 900px;
   margin: 0 auto;
   flex-wrap: wrap;
-  margin-top: 15rem;
+  margin-top: 18rem;
 }
 
 /* Panels for Boosting & Items */
@@ -1639,6 +1652,7 @@ a {
   color: #ff0000;
   transition: all 0.2s ease;
 }
+
 /* User Profile Styles - Add this to your existing style.css */
 
 /* Header User Profile Section */
@@ -1827,7 +1841,8 @@ a {
   gap: 10px;
 }
 
-.login-btn, .register-btn {
+.login-btn,
+.register-btn {
   padding: 10px 20px;
   border: none;
   border-radius: 6px;
@@ -1894,16 +1909,16 @@ a {
   .main-header {
     padding: 15px 20px;
   }
-  
+
   .user-profile-dropdown {
     width: 260px;
     right: -10px;
   }
-  
+
   .username {
     display: none;
   }
-  
+
   .user-balance {
     font-size: 12px;
   }

@@ -29,9 +29,9 @@ const Hero = () => {
   return (
     <section className="hero-section" style={{ backgroundImage: `url(${fortniteBanner})`, height: "15rem" }}>
       <div className="hero-content">
-        <h1>Jump Into OG Fortnite Map With Fresh Skins</h1>
+        <h1>Old School Rune scape</h1>
         <button className="yellow-btn" onClick={handleFortniteClick}>
-          Buy Fortnite Accounts
+          Buy OSRS ACCOUNTS / GOLD
         </button>
       </div>
 
@@ -39,7 +39,7 @@ const Hero = () => {
         <div className="info-card">
           <h3>Popular Accounts</h3>
           <ul>
-            <li><img src={gtaIcon} alt="GTA 5" /> Grand Theft Auto 5</li>
+            <li><img src={codIcon} alt="osrs" /> Old School RuneScape</li>
             <li><img src={valorantIcon} alt="Valorant" /> Valorant</li>
             <li><img src={codIcon} alt="COD" /> Call of Duty</li>
             <li><img src={robloxIcon} alt="Roblox" /> Roblox</li>

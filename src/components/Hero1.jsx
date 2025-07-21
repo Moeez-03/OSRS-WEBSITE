@@ -30,7 +30,7 @@ const Hero = () => {
         <>
             <section className="hero-section" style={{ backgroundImage: `url(${fortniteBanner})`, height: "15rem" }}>
                 <div className="hero-content">
-                    <h1>Jump Into OG Fortnite Map With Fresh Skins</h1>
+                    <h1>Old School Rune scape</h1>
                     <button className="yellow-btn" onClick={handleFortniteClick}>
                         Buy OSRS Gold / Accounts
                     </button>
@@ -43,8 +43,8 @@ const Hero = () => {
                         <h3>Popular Accounts</h3>
                         <div className="accounts-grid">
                             <div className="account-item">
-                                <img src={gtaIcon} alt="GTA 5" />
-                                <span>Grand Theft Auto 5</span>
+                                <img src={codIcon} alt="COD" />
+                                <span>Old School RuneScape</span>
                             </div>
                             <div className="account-item">
                                 <img src={fortniteIcon} alt="Fortnite" />
@@ -57,14 +57,6 @@ const Hero = () => {
                             <div className="account-item">
                                 <img src={r6Icon} alt="R6" />
                                 <span>Rainbow Six Siege X</span>
-                            </div>
-                            <div className="account-item">
-                                <img src={codIcon} alt="COD" />
-                                <span>Call of Duty</span>
-                            </div>
-                            <div className="account-item">
-                                <img src={rsIcon} alt="RuneScape" />
-                                <span>Old School RuneScape</span>
                             </div>
                             <div className="account-item">
                                 <img src={robloxIcon} alt="Roblox" />
@@ -88,7 +80,7 @@ const Hero = () => {
                         <h3>Popular Currencies</h3>
                         <div className="currencies-grid">
                             <div className="currency-item">
-                                <img src={rsGoldIcon} alt="RS Gold" />
+                                <img src={codIcon} alt="RS Gold" />
                                 <span>Old School RuneScape Gold</span>
                             </div>
                             <div className="currency-item">
